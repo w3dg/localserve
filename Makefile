@@ -1,13 +1,13 @@
-dist/lcsv: main.go
+dist/localserve: main.go
 	mkdir -p dist/
 	go build -o $@ $<
 
 .PHONY: run
-run: dist/lcsv
+run: dist/localserve
 	@$<
 
 .PHONY: all
-all: dist/lcsv
+all: dist/localserve
 
 clean:
 	rm -rf ./dist/ 2>/dev/null
@@ -15,8 +15,7 @@ clean:
 help:
 	@echo "Build the executable from source"
 	@echo "  make "
-	@echo "  make lcsv"
-	@echo "  make build"
+	@echo "  make all"
 
 	@echo "Build and run the project"
 	@echo "  make run"
