@@ -1,16 +1,16 @@
-dist/lcsv: cmd/main.go
+dist/lcsv: main.go
 	mkdir -p dist/
 	go build -o $@ $<
 
 .PHONY: run
 run: dist/lcsv
-	$<
+	@$<
 
 .PHONY: all
 all: dist/lcsv
 
 clean:
-	rm -rf ./dist/ ./tmp/ 2>/dev/null
+	rm -rf ./dist/ 2>/dev/null
 
 help:
 	@echo "Build the executable from source"
@@ -26,4 +26,3 @@ help:
 
 	@echo "Display this help message"
 	@echo "  make help"
-
